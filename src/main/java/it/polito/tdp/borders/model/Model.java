@@ -1,5 +1,6 @@
 package it.polito.tdp.borders.model;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -46,6 +47,7 @@ public class Model {
 		}
 		System.out.println("Ci sono "+grafo.vertexSet().size()+" vertici e "+grafo.edgeSet().size()+" archi.");
 		countries=new LinkedList<>(grafo.vertexSet());
+		Collections.sort(countries);
 		ConnectivityInspector ci= new ConnectivityInspector(grafo);
 		components= ci.connectedSets();
 		System.out.println("Ci sono "+components.size()+" components.");
